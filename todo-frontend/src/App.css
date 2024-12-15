@@ -1,0 +1,271 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* App Container */
+.app-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin: 20px 0;
+}
+
+/* Input Field */
+.task-input {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+button:active {
+  background-color: #1e7e34;
+}
+
+button.delete {
+  background-color: #dc3545;
+  margin-left: 10px;
+}
+
+button.delete:hover {
+  background-color: #c82333;
+}
+
+button.filter {
+  background-color: #007bff;
+  margin: 5px;
+}
+
+button.filter:hover {
+  background-color: #0056b3;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px; /* Scrollable list */
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  scroll-behavior: smooth;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.task-item:hover {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.task-item span {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.task-item span:hover {
+  color: #007bff;
+}
+
+/* Task Completed Style */
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Task Counter */
+.task-counter {
+  text-align: right;
+  color: #666;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+/* Filters */
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 10px; /* Add spacing between buttons */
+}
+
+.filters button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.filters button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Login Page */
+.login-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.logout-button {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Toast Notifications */
+.Toastify__toast-container {
+  z-index: 9999 !important;
+  padding: 1rem;
+  top: 1rem !important;
+  right: 1rem !important;
+}
+
+.Toastify__toast {
+  opacity: 1 !important;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.Toastify__toast--default {
+  background-color: #ffffff;
+}
+
+.Toastify__toast--success {
+  background-color: #28a745 !important;
+  color: #fff;
+}
+
+.Toastify__toast--info {
+  background-color: #007bff !important;
+  color: #fff;
+}
+
+.Toastify__toast-icon {
+  animation: popIn 0.3s ease-in-out;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .task-input {
+    flex-direction: column;
+  }
+
+  input[type="text"] {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-item button.delete {
+    margin-top: 5px;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: center;
+  }
+}
